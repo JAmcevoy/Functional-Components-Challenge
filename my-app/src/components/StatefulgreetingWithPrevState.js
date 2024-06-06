@@ -1,5 +1,7 @@
 import React from "react";
 
+// This component represents a stateful greeting message along with a button to toggle the greeting and a button to increment a counter.
+
 // Defining a stateful class component
 class StatefulGreeting extends React.Component {
     // Constructor method to initialize state and props
@@ -7,32 +9,34 @@ class StatefulGreeting extends React.Component {
         super(props);
         // Initializing the state
         this.state = {
-            introduction: "Hello!",
-            buttonText: "Exit",
-            count: 0
+            introduction: "Hello!", // Initial greeting message
+            buttonText: "Exit", // Initial button text
+            count: 0 // Initial count value
         };
     }
 
     // Method to handle button click and update the state
     handleClick() {
         this.setState((prevState, prevProps) => {
-          console.log("Previous State:", prevState);
-          console.log("Previous Props:", prevProps);
-          return {
-            introduction:
-              prevState.introduction === "Hello!" ? "Goodbye!" : "Hello!",
-            buttonText: prevState.buttonText === "Exit" ? "Enter" : "Exit",
-          };
+            // Logging the previous state and props values for debugging purposes
+            console.log("Previous State:", prevState);
+            console.log("Previous Props:", prevProps);
+            return {
+                // Toggling the introduction and buttonText state values
+                introduction: prevState.introduction === "Hello!" ? "Goodbye!" : "Hello!", // Toggle between "Hello" and "Goodbye"
+                buttonText: prevState.buttonText === "Exit" ? "Enter" : "Exit", // Toggle between "Exit" and "Enter"
+            };
         });
-      }
+    }
 
     // Method to increment the count state value
     increment() {
         this.setState((prevState, prevProps) => {
+            // Incrementing the count state value
             return {
-                count: prevState.count + 1
+                count: prevState.count + 1 // Increment count by 1
             }
-        })
+        });
     }
 
     // Render method to display the component
