@@ -15,24 +15,23 @@ class StatefulGreeting extends React.Component {
 
     // Method to handle button click and update the state
     handleClick() {
-        // Toggling the introduction and buttonText state values
-        this.setState({
-            introduction: this.state.introduction === "Hello!" ? "Goodbye!" : "Hello!",
-            buttonText: this.state.buttonText === "Exit" ? "Enter" : "Exit!",
-        }, () => {
-            // Logging the new state values after the state update
-            console.log('new state', this.state.introduction);
-            console.log('new state', this.state.buttonText);
+        this.setState((prevState, prevProps) => {
+          console.log("Previous State:", prevState);
+          console.log("Previous Props:", prevProps);
+          return {
+            introduction:
+              prevState.introduction === "Hello!" ? "Goodbye!" : "Hello!",
+            buttonText: prevState.buttonText === "Exit" ? "Enter" : "Exit",
+          };
         });
-        // Logging the state values before the state update completes (asynchronous nature of setState)
-        console.log(this.state.introduction);
-        console.log(this.state.buttonText);
-    }
+      }
 
     // Method to increment the count state value
     increment() {
-        this.setState({
-            count: this.state.count + 1
+        this.setState((prevState, prevProps) => {
+            return {
+                count: prevState.count + 1
+            }
         })
     }
 
