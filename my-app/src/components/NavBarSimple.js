@@ -24,7 +24,8 @@ class NavBarSimple extends Component {
         // We're updating the state based on what it was before.
         this.setState((prevState) => ({
             // If the message was "Hello, guest!", change it to "Welcome back, user!" and vice versa.
-            message: prevState.message === "Hello, guest!" ? `Welcome back, ${this.props.name}!` : "Hello, guest!",
+            // Need to add template leterals to the string to use the name in props, Also make sure it is "this.props.properties"
+            message: prevState.message === "Hello, guest!" ? `Welcome back, ${this.props.name}!` : "Hello, guest!", 
             // If the button text was "Log out", change it to "Log in" and vice versa.
             buttonText: prevState.buttonText === "Log out" ? "Log in" : "Log out",
         }), () => console.log(this.state.message)) // We're also logging the updated message to the console.
