@@ -40,14 +40,3 @@ export class NavBarForm extends Component {
 export default NavBarForm; 
 
 
-
-```
-In simpler terms:
-
-We're importing necessary tools from React and our local files.
-We're creating a component called NavBarForm, which is like a blueprint for how our login form should look and behave.
-Inside the NavBarForm, we keep track of whether the user is logged in or not using a piece of memory called state.
-When the user clicks the login button, we update this memory (state) to reflect whether they're logged in or not.
-We're rendering the UI (the login form and a heading) using JSX, a special language that mixes HTML with JavaScript.
-We're also rendering another component called NavBarChild, which represents either the login button or the login form, depending on whether the user is logged in or not. We're passing it information (props) about whether the user is logged in and how to handle a click event.
-```
